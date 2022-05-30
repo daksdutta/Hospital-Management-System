@@ -246,5 +246,14 @@
   <ItemGroup>
     <None Include="Resources\emergency.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginNew.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ForgotPassword.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homepagelogo.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

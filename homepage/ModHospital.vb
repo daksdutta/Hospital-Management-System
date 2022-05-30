@@ -3,7 +3,7 @@
 Module ModHospital
     Public dbcon As New OleDbConnection
     Public Sub PConnectDB()
-        dbcon.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\BCA 6TH SEM\Hospital System\hospital.mdb"
+        dbcon.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Hospital-Management-System\hospital.mdb"
         dbcon.Open()
     End Sub
 

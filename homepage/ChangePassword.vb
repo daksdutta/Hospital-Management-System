@@ -9,7 +9,7 @@ Public Class ChangePassword
 
     Private Sub btn_changepassword_Click(sender As Object, e As EventArgs) Handles btn_changepassword.Click
         'dbcon = New OleDbConnection
-        dbcon.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\BCA 6TH SEM\Hospital System\hospital.mdb"
+        dbcon.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Hospital-Management-System\hospital.mdb"
         dbcon.Open()
 
         Dim sql1 As String
@@ -32,6 +32,5 @@ Public Class ChangePassword
     Private Sub btn_close_Click(sender As Object, e As EventArgs) Handles btn_close.Click
         Me.Close()
     End Sub
-
 
 End Class

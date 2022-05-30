@@ -37,7 +37,8 @@ Partial Class ChangePassword
         '
         Me.btn_close.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(133, Byte), Integer), CType(CType(133, Byte), Integer))
         Me.btn_close.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_close.Location = New System.Drawing.Point(177, 498)
+        Me.btn_close.ForeColor = System.Drawing.Color.White
+        Me.btn_close.Location = New System.Drawing.Point(179, 473)
         Me.btn_close.Margin = New System.Windows.Forms.Padding(6, 7, 6, 7)
         Me.btn_close.Name = "btn_close"
         Me.btn_close.Size = New System.Drawing.Size(182, 45)
@@ -49,8 +50,8 @@ Partial Class ChangePassword
         '
         Me.btn_changepassword.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(133, Byte), Integer), CType(CType(133, Byte), Integer))
         Me.btn_changepassword.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_changepassword.ForeColor = System.Drawing.Color.Black
-        Me.btn_changepassword.Location = New System.Drawing.Point(177, 436)
+        Me.btn_changepassword.ForeColor = System.Drawing.Color.White
+        Me.btn_changepassword.Location = New System.Drawing.Point(179, 411)
         Me.btn_changepassword.Margin = New System.Windows.Forms.Padding(6, 7, 6, 7)
         Me.btn_changepassword.Name = "btn_changepassword"
         Me.btn_changepassword.Size = New System.Drawing.Size(182, 48)
@@ -61,7 +62,7 @@ Partial Class ChangePassword
         'txtconfirmpassword
         '
         Me.txtconfirmpassword.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtconfirmpassword.Location = New System.Drawing.Point(272, 365)
+        Me.txtconfirmpassword.Location = New System.Drawing.Point(272, 328)
         Me.txtconfirmpassword.Margin = New System.Windows.Forms.Padding(6, 7, 6, 7)
         Me.txtconfirmpassword.Name = "txtconfirmpassword"
         Me.txtconfirmpassword.Size = New System.Drawing.Size(298, 34)
@@ -70,7 +71,7 @@ Partial Class ChangePassword
         'txtnewpassword
         '
         Me.txtnewpassword.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtnewpassword.Location = New System.Drawing.Point(272, 299)
+        Me.txtnewpassword.Location = New System.Drawing.Point(272, 280)
         Me.txtnewpassword.Margin = New System.Windows.Forms.Padding(6, 7, 6, 7)
         Me.txtnewpassword.Name = "txtnewpassword"
         Me.txtnewpassword.Size = New System.Drawing.Size(298, 34)
@@ -90,7 +91,8 @@ Partial Class ChangePassword
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(40, 365)
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(47, 334)
         Me.Label4.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(183, 28)
@@ -102,7 +104,8 @@ Partial Class ChangePassword
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(47, 299)
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(47, 286)
         Me.Label3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(150, 28)
@@ -114,6 +117,7 @@ Partial Class ChangePassword
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
         Me.Label2.Location = New System.Drawing.Point(47, 236)
         Me.Label2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label2.Name = "Label2"
@@ -125,12 +129,12 @@ Partial Class ChangePassword
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 22.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(133, Byte), Integer), CType(CType(133, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(102, 144)
+        Me.Label1.Location = New System.Drawing.Point(129, 163)
         Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(399, 51)
+        Me.Label1.Size = New System.Drawing.Size(316, 41)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "CHANGE PASSWORD"
         '
@@ -138,7 +142,7 @@ Partial Class ChangePassword
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 28.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.homepage.My.Resources.Resources.changepassword
+        Me.BackgroundImage = Global.homepage.My.Resources.Resources.ForgotPassword
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1160, 584)
         Me.Controls.Add(Me.btn_close)
@@ -151,6 +155,7 @@ Partial Class ChangePassword
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.Color.White
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "ChangePassword"
         Me.Text = "ChangePassword"
