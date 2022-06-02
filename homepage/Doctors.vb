@@ -24,15 +24,24 @@ Public Class Doctors
         btnAdd.Enabled = True
     End Sub
 
+    Private Sub bt_dob_Click(sender As Object, e As EventArgs) Handles bt_dob.Click
+        txtDob.Text = Format(AppointmentDatePicker.Value, "dd-MM-yyyy")
+    End Sub
+
+    Private Sub bt_dojoining_Click(sender As Object, e As EventArgs) Handles bt_dojoining.Click
+        txtjoiningdate.Text = Format(AppointmentDatePicker.Value, "dd-MM-yyyy")
+    End Sub
+
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim ans As Integer
         ans = MsgBox("Do you want to Insert ?", vbQuestion + vbYesNo, "Insertion")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "insert into tbDoctors (Name,Gender,DateofBirth,Position,HouseNumber,State,City,Address,Department,Pincode,PhoneNumber) 
+            sSql = "insert into tbDoctors (DoctorName,DoctorGender,DateofBirth,DateofJoining,DoctorPosition,HouseNumber,State,City,Address,DoctorDepartment,Pincode,PhoneNumber) 
                 values('" & txtName.Text & "',
-                       '" & txtGender.Text & "',
+                       '" & cbGender.Text & "',
                         #" & txtDob.Text & "#,
+                        #" & txtjoiningdate.Text & "#,
                        '" & cbPosition.Text & "',
                        " & txtHouseNumber.Text & ",
                        '" & cbState.Text & "',
@@ -62,15 +71,16 @@ Public Class Doctors
         If DataGridView1.CurrentRow.Index >= t1.Rows.Count Then Exit Sub
         Dim myrow As DataRow = t1.Rows(DataGridView1.CurrentRow.Index)
         txtId.Text = myrow("ID")
-        txtName.Text = myrow("Name")
-        txtGender.Text = myrow("Gender")
+        txtName.Text = myrow("DoctorName")
+        cbGender.Text = myrow("DoctorGender")
         txtDob.Text = myrow("DateofBirth")
-        cbPosition.Text = myrow("Position")
+        txtjoiningdate.Text = myrow("DateofJoining")
+        cbPosition.Text = myrow("DoctorPosition")
         txtHouseNumber.Text = myrow("HouseNumber")
         cbState.Text = myrow("State")
         txtCity.Text = myrow("City")
         txtAddress.Text = myrow("Address")
-        cbDepartment.Text = myrow("Department")
+        cbDepartment.Text = myrow("DoctorDepartment")
         txtPin.Text = myrow("Pincode")
         txtMobile.Text = myrow("PhoneNumber")
     End Sub
@@ -80,17 +90,18 @@ Public Class Doctors
         ans = MsgBox("Are you sure you want to Update ?", vbQuestion + vbYesNo, "Updation")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "update tbDoctors set Name= '" & txtName.Text & "',
-                                          Gender = '" & txtGender.Text & "',
+            sSql = "update tbDoctors set DoctorName= '" & txtName.Text & "',
+                                          DoctorGender = '" & cbGender.Text & "',
                                           DateofBirth = #" & txtDob.Text & "#,
+                                          DateofJoining = #" & txtjoiningdate.Text & "#,
                                           HouseNumber = '" & txtHouseNumber.Text & "',
-                                          Position = '" & cbPosition.Text & "',
+                                          DoctorPosition = '" & cbPosition.Text & "',
                                           Address = '" & cbState.Text & "',
                                           City = '" & txtCity.Text & "',
                                           State = '" & txtAddress.Text & "',
                                           Pincode = " & txtPin.Text & ", 
                                           PhoneNumber = " & txtMobile.Text & ",
-                                          Department = '" & cbDepartment.Text & "'
+                                          DoctorDepartment = '" & cbDepartment.Text & "'
                                           where ID =" & txtId.Text
             MsgBox("Item Updated")
             cmd = New OleDbCommand(sSql, dbcon)
@@ -130,7 +141,8 @@ Public Class Doctors
         txtId.Text = " "
         txtName.Text = " "
         txtDob.Text = " "
-        txtGender.Text = " "
+        txtjoiningdate.Text = " "
+        cbGender.Text = " "
         txtMobile.Text = " "
         cbPosition.Text = " "
         txtAddress.Text = " "
@@ -144,7 +156,7 @@ Public Class Doctors
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Dim sSql As String
-        sSql = "Select * from tbDoctors where Name like '" & txtName_Search.Text & "%'"
+        sSql = "Select * from tbDoctors where DoctorName like '" & txtName_Search.Text & "%'"
         ds.Clear()
         adp = New OleDbDataAdapter(sSql, dbcon)
         adp.Fill(ds, "tbDoctors")

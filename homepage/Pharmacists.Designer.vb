@@ -60,7 +60,7 @@ Partial Class Pharmacists
         'txtName_Search
         '
         Me.txtName_Search.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtName_Search.Location = New System.Drawing.Point(401, 458)
+        Me.txtName_Search.Location = New System.Drawing.Point(573, 499)
         Me.txtName_Search.Margin = New System.Windows.Forms.Padding(4)
         Me.txtName_Search.Name = "txtName_Search"
         Me.txtName_Search.Size = New System.Drawing.Size(200, 32)
@@ -71,7 +71,7 @@ Partial Class Pharmacists
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(199, 466)
+        Me.Label3.Location = New System.Drawing.Point(371, 507)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(157, 24)
@@ -82,7 +82,7 @@ Partial Class Pharmacists
         '
         Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(188, Byte), Integer))
         Me.btnSearch.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.Location = New System.Drawing.Point(617, 453)
+        Me.btnSearch.Location = New System.Drawing.Point(789, 494)
         Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(117, 37)
@@ -115,10 +115,10 @@ Partial Class Pharmacists
         '
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(27, 536)
+        Me.DataGridView1.Location = New System.Drawing.Point(82, 626)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1298, 117)
+        Me.DataGridView1.Size = New System.Drawing.Size(1298, 123)
         Me.DataGridView1.TabIndex = 110
         '
         'Panel1
@@ -128,7 +128,7 @@ Partial Class Pharmacists
         Me.Panel1.Controls.Add(Me.btnExit)
         Me.Panel1.Controls.Add(Me.btnUpdate)
         Me.Panel1.Controls.Add(Me.btnDelete)
-        Me.Panel1.Location = New System.Drawing.Point(77, 368)
+        Me.Panel1.Location = New System.Drawing.Point(65, 404)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(796, 69)
@@ -389,7 +389,7 @@ Partial Class Pharmacists
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(188, Byte), Integer))
-        Me.Label15.Location = New System.Drawing.Point(255, 19)
+        Me.Label15.Location = New System.Drawing.Point(264, 9)
         Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(479, 54)
@@ -402,7 +402,7 @@ Partial Class Pharmacists
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.homepage.My.Resources.Resources.pharmacy
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1353, 675)
+        Me.ClientSize = New System.Drawing.Size(1430, 762)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtHouseNumber)
         Me.Controls.Add(Me.Label13)

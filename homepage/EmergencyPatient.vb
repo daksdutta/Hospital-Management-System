@@ -27,8 +27,14 @@ Public Class EmergencyPatient
         txtId.Text = " "
         txtName.Text = " "
         txtCaseType.Text = " "
-        txtGender.Text = " "
+        cbGender.Text = " "
         txtDate.Text = " "
+        txtTime.Text = " "
+    End Sub
+
+    Private Sub bt_ok_Click(sender As Object, e As EventArgs) Handles bt_ok.Click
+        txtDate.Text = Format(AppointmentDatePicker.Value, "dd-MM-yyyy")
+        txtTime.Text = AppointmentDatePicker.Value.ToShortTimeString
     End Sub
 
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles BtnAdd.Click
@@ -36,10 +42,11 @@ Public Class EmergencyPatient
         ans = MsgBox("Do you want to Insert ?", vbQuestion + vbYesNo, "Insertion")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "insert into tbEmergency (Name,Date,Gender,CaseType) 
+            sSql = "insert into tbEmergency (PatientName,EmergencyDate,EmergencyTime,PatientGender,CaseType) 
                 values('" & txtName.Text & "',
                        #" & txtDate.Text & "#,
-                       '" & txtGender.Text & "', 
+                       #" & txtTime.Text & "#,
+                       '" & cbGender.Text & "', 
                        '" & txtCaseType.Text & "')"
 
             MsgBox("Item added")
@@ -61,10 +68,11 @@ Public Class EmergencyPatient
         If t1.Rows.Count = 0 Then Exit Sub
         If DataGridView1.CurrentRow.Index >= t1.Rows.Count Then Exit Sub
         Dim myrow As DataRow = t1.Rows(DataGridView1.CurrentRow.Index)
-        txtId.Text = myrow("ID")
-        txtName.Text = myrow("Name")
-        txtDate.Text = myrow("Date")
-        txtGender.Text = myrow("Gender")
+        txtId.Text = myrow("PatientID")
+        txtName.Text = myrow("PatientName")
+        txtDate.Text = myrow("EmergencyDate")
+        txtTime.Text = myrow("EmergencyTime")
+        cbGender.Text = myrow("PatientGender")
         txtCaseType.Text = myrow("CaseType")
     End Sub
 
@@ -73,11 +81,12 @@ Public Class EmergencyPatient
         ans = MsgBox("Are you sure you want to Update ?", vbQuestion + vbYesNo, "Updation")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "update tbEmergency set Name= '" & txtName.Text & "',
-                                          Date = #" & txtDate.Text & "#,
-                                          Gender = '" & txtGender.Text & "',
-                                          CaseType = #" & txtCaseType.Text & "#,
-                                          where ID =" & txtId.Text
+            sSql = "update tbEmergency set PatientName= '" & txtName.Text & "',
+                                          EmergencyDate = #" & txtDate.Text & "#,
+                                          EmergencyTime = #" & txtTime.Text & "#,  
+                                          PatientGender = '" & cbGender.Text & "',
+                                          CaseType = '" & txtCaseType.Text & "',
+                                          where PatientID =" & txtId.Text
             MsgBox("Item Updated")
             cmd = New OleDbCommand(sSql, dbcon)
             cmd.ExecuteNonQuery()
@@ -97,7 +106,7 @@ Public Class EmergencyPatient
         ans = MsgBox("Are you sure you want to delete ?", vbQuestion + vbYesNo, "Deletion")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "Delete from tbEmergency where ID =" & txtId.Text
+            sSql = "Delete from tbEmergency where PatientID =" & txtId.Text
             MsgBox("Item Deleted")
             cmd = New OleDbCommand(sSql, dbcon)
             cmd.ExecuteNonQuery()
@@ -114,7 +123,7 @@ Public Class EmergencyPatient
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Dim sSql As String
-        sSql = "Select * from tbEmergency where Name like '" & txtName_Search.Text & "%'"
+        sSql = "Select * from tbEmergency where PatientName like '" & txtName_Search.Text & "%'"
         ds.Clear()
         adp = New OleDbDataAdapter(sSql, dbcon)
         adp.Fill(ds, "tbEmergency")
@@ -125,7 +134,7 @@ Public Class EmergencyPatient
     End Sub
 
     Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
-        homepage.Show()
+        Login.Show()
         Me.Hide()
     End Sub
 

@@ -24,17 +24,21 @@ Public Class Appointment
         btnAdd.Enabled = True
     End Sub
 
+    Private Sub bt_ok_Click(sender As Object, e As EventArgs) Handles bt_ok.Click
+        txtDate.Text = Format(AppointmentDatePicker.Value, "dd-MM-yyyy")
+    End Sub
+
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim ans As Integer
         ans = MsgBox("Do you want to Insert ?", vbQuestion + vbYesNo, "Insertion")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "insert into tbAppointment (Name,Gender,DateofBirth,DoctorName,DoctorDepartment,Time,Date,PhoneNumber) 
+            sSql = "insert into tbAppointment (PatientName,PatientGender,PatientAge,DoctorName,DoctorDepartment,AppointmentTime,AppointmentDate,PatientPhoneNumber) 
                 values('" & txtName.Text & "',
                        '" & txtGender.Text & "',
-                        #" & txtDob.Text & "#,
+                        " & txtAge.Text & ",
                        '" & txtDoctorName.Text & "',
-                       '" & txtDocDept.Text & "',
+                       '" & cbDepartment.Text & "',
                        " & txtTime.Text & ",
                        #" & txtDate.Text & "#,
                         " & txtMobile.Text & ")"
@@ -59,14 +63,14 @@ Public Class Appointment
         If DataGridView1.CurrentRow.Index >= t1.Rows.Count Then Exit Sub
         Dim myrow As DataRow = t1.Rows(DataGridView1.CurrentRow.Index)
         txtId.Text = myrow("ID")
-        txtName.Text = myrow("Name")
-        txtGender.Text = myrow("Gender")
-        txtDob.Text = myrow("DateofBirth")
-        txtMobile.Text = myrow("PhoneNumber")
+        txtName.Text = myrow("PatientName")
+        txtGender.Text = myrow("PatientGender")
+        txtAge.Text = myrow("PatientAge")
+        txtMobile.Text = myrow("PatientPhoneNumber")
         txtDoctorName.Text = myrow("DoctorName")
-        txtDocDept.Text = myrow("DoctorDepartment")
-        txtTime.Text = myrow("Time")
-        txtDate.Text = myrow("Date")
+        cbDepartment.Text = myrow("DoctorDepartment")
+        txtTime.Text = myrow("AppointmentTime")
+        txtDate.Text = myrow("AppointmentDate")
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
@@ -74,14 +78,14 @@ Public Class Appointment
         ans = MsgBox("Are you sure you want to Update ?", vbQuestion + vbYesNo, "Updation")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "update tbAppointment set Name= '" & txtName.Text & "',
-                                          Gender = '" & txtGender.Text & "',
-                                          DateofBirth = #" & txtDob.Text & "#,
+            sSql = "update tbAppointment set PatientName= '" & txtName.Text & "',
+                                          PatientGender = '" & txtGender.Text & "',
+                                          PatientAge = " & txtAge.Text & ",
                                           DoctorName = '" & txtDoctorName.Text & "',
-                                          DoctorDepartment = '" & txtDocDept.Text & "',
-                                          Time = " & txtTime.Text & ",
-                                          Date = #" & txtDate.Text & "#,
-                                          PhoneNumber = " & txtMobile.Text & "
+                                          DoctorDepartment = '" & cbDepartment.Text & "',
+                                          AppointmentTime = " & txtTime.Text & ",
+                                          AppointmentDate = #" & txtDate.Text & "#,
+                                          PatientPhoneNumber = " & txtMobile.Text & "
                                           where ID =" & txtId.Text
             MsgBox("Item Updated")
             cmd = New OleDbCommand(sSql, dbcon)
@@ -120,11 +124,11 @@ Public Class Appointment
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         txtId.Text = " "
         txtName.Text = " "
-        txtDob.Text = " "
+        txtAge.Text = " "
         txtGender.Text = " "
         txtMobile.Text = " "
         txtDoctorName.Text = " "
-        txtDocDept.Text = " "
+        cbDepartment.Text = " "
         txtTime.Text = " "
         txtDate.Text = " "
     End Sub
@@ -132,7 +136,7 @@ Public Class Appointment
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Dim sSql As String
-        sSql = "Select * from tbAppointment where Name like '" & txtName_Search.Text & "%'"
+        sSql = "Select * from tbAppointment where PatientName like '" & txtName_Search.Text & "%'"
         ds.Clear()
         adp = New OleDbDataAdapter(sSql, dbcon)
         adp.Fill(ds, "tbAppointment")
@@ -146,5 +150,8 @@ Public Class Appointment
         homepage.Show()
         Me.Hide()
     End Sub
+
+
+
 
 End Class

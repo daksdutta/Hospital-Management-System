@@ -30,28 +30,39 @@ Public Class Nurses
         If DataGridView1.CurrentRow.Index >= t1.Rows.Count Then Exit Sub
         Dim myrow As DataRow = t1.Rows(DataGridView1.CurrentRow.Index)
         txtId.Text = myrow("ID")
-        txtName.Text = myrow("Name")
-        txtGender.Text = myrow("Gender")
+        txtName.Text = myrow("NurseName")
+        cbGender.Text = myrow("NurseGender")
         txtDob.Text = myrow("DateofBirth")
+        txtjoiningdate.Text = myrow("DateofJoining")
         txtHouseNumber.Text = myrow("HouseNumber")
-        txtState.Text = myrow("State")
+        cbState.Text = myrow("State")
         txtCity.Text = myrow("City")
         txtAddress.Text = myrow("Address")
         txtPin.Text = myrow("Pincode")
         txtMobile.Text = myrow("PhoneNumber")
     End Sub
 
+    Private Sub bt_dob_Click(sender As Object, e As EventArgs) Handles bt_dob.Click
+        txtDob.Text = Format(AppointmentDatePicker.Value, "dd-MM-yyyy")
+    End Sub
+
+    Private Sub bt_dojoining_Click(sender As Object, e As EventArgs) Handles bt_dojoining.Click
+        txtjoiningdate.Text = Format(AppointmentDatePicker.Value, "dd-MM-yyyy")
+    End Sub
+
+
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim ans As Integer
         ans = MsgBox("Do you want to Insert ?", vbQuestion + vbYesNo, "Insertion")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "insert into tbNurses (Name,Gender,DateofBirth,HouseNumber,State,City,Address,Pincode,PhoneNumber) 
+            sSql = "insert into tbNurses (NurseName,NurseGender,DateofBirth,DateofJoining,HouseNumber,State,City,Address,Pincode,PhoneNumber) 
                 values('" & txtName.Text & "',
-                       '" & txtGender.Text & "',
+                       '" & cbGender.Text & "',
                         #" & txtDob.Text & "#,
+                       #" & txtjoiningdate.Text & "#,
                        '" & txtHouseNumber.Text & "',
-                       '" & txtState.Text & "',
+                       '" & cbState.Text & "',
                        '" & txtCity.Text & "',
                        '" & txtAddress.Text & "',
                         " & txtPin.Text & ", 
@@ -76,11 +87,12 @@ Public Class Nurses
         ans = MsgBox("Are you sure you want to Update ?", vbQuestion + vbYesNo, "Updation")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "update tbNurses set Name= '" & txtName.Text & "',
-                                          Gender = '" & txtGender.Text & "',
+            sSql = "update tbNurses set NurseName= '" & txtName.Text & "',
+                                          NurseGender = '" & cbGender.Text & "',
                                           DateofBirth = #" & txtDob.Text & "#,
+                                          DateofJoining = #" & txtjoiningdate.Text & "#,
                                           HouseNumber = '" & txtHouseNumber.Text & "',
-                                          Address = '" & txtState.Text & "',
+                                          Address = '" & cbState.Text & "',
                                           City = '" & txtCity.Text & "',
                                           State = '" & txtAddress.Text & "',
                                           Pincode = " & txtPin.Text & ", 
@@ -124,18 +136,19 @@ Public Class Nurses
         txtId.Text = " "
         txtName.Text = " "
         txtDob.Text = " "
-        txtGender.Text = " "
+        txtjoiningdate.Text = " "
+        cbGender.Text = " "
         txtMobile.Text = " "
         txtAddress.Text = " "
         txtCity.Text = " "
         txtPin.Text = " "
-        txtState.Text = " "
+        cbState.Text = " "
         txtHouseNumber.Text = " "
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Dim sSql As String
-        sSql = "Select * from tbNurses where Name like '" & txtName_Search.Text & "%'"
+        sSql = "Select * from tbNurses where NurseName like '" & txtName_Search.Text & "%'"
         ds.Clear()
         adp = New OleDbDataAdapter(sSql, dbcon)
         adp.Fill(ds, "tbNurses")

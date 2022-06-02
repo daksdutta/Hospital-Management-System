@@ -27,13 +27,22 @@ Public Class Laboratorists
         txtId.Text = " "
         txtName.Text = " "
         txtDob.Text = " "
-        txtGender.Text = " "
+        txtjoiningdate.Text = " "
+        cbGender.Text = " "
         txtMobile.Text = " "
         txtAddress.Text = " "
         txtCity.Text = " "
         txtPin.Text = " "
-        txtState.Text = " "
+        cbState.Text = " "
         txtHouseNumber.Text = " "
+    End Sub
+
+    Private Sub bt_dob_Click(sender As Object, e As EventArgs) Handles bt_dob.Click
+        txtDob.Text = Format(AppointmentDatePicker.Value, "dd-MM-yyyy")
+    End Sub
+
+    Private Sub bt_dojoining_Click(sender As Object, e As EventArgs) Handles bt_dojoining.Click
+        txtjoiningdate.Text = Format(AppointmentDatePicker.Value, "dd-MM-yyyy")
     End Sub
 
     Private Sub BtnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -41,12 +50,13 @@ Public Class Laboratorists
         ans = MsgBox("Do you want to Insert ?", vbQuestion + vbYesNo, "Insertion")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "insert into tbLaboratorists (Name,Gender,DateofBirth,HouseNumber,State,City,Address,Pincode,PhoneNumber) 
+            sSql = "insert into tbLaboratorists (LaboratoristName,LaboratoristGender,DateofJoining,DateofBirth,HouseNumber,State,City,Address,Pincode,PhoneNumber) 
                 values('" & txtName.Text & "',
-                       '" & txtGender.Text & "',
+                       '" & cbGender.Text & "',
                         #" & txtDob.Text & "#,
+                       #" & txtjoiningdate.Text & "#,
                        '" & txtHouseNumber.Text & "',
-                       '" & txtState.Text & "',
+                       '" & cbState.Text & "',
                        '" & txtCity.Text & "',
                        '" & txtAddress.Text & "',
                         " & txtPin.Text & ", 
@@ -71,12 +81,13 @@ Public Class Laboratorists
         If t1.Rows.Count = 0 Then Exit Sub
         If DataGridView1.CurrentRow.Index >= t1.Rows.Count Then Exit Sub
         Dim myrow As DataRow = t1.Rows(DataGridView1.CurrentRow.Index)
-        txtId.Text = myrow("ID")
-        txtName.Text = myrow("Name")
-        txtGender.Text = myrow("Gender")
+        txtId.Text = myrow("LaboratoristID")
+        txtName.Text = myrow("LaboratoristName")
+        cbGender.Text = myrow("LaboratoristGender")
         txtDob.Text = myrow("DateofBirth")
+        txtjoiningdate.Text = myrow("DateofJoining")
         txtHouseNumber.Text = myrow("HouseNumber")
-        txtState.Text = myrow("State")
+        cbState.Text = myrow("State")
         txtCity.Text = myrow("City")
         txtAddress.Text = myrow("Address")
         txtPin.Text = myrow("Pincode")
@@ -88,16 +99,17 @@ Public Class Laboratorists
         ans = MsgBox("Are you sure you want to Update ?", vbQuestion + vbYesNo, "Updation")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "update tbLaboratorists set Name= '" & txtName.Text & "',
-                                          Gender = '" & txtGender.Text & "',
+            sSql = "update tbLaboratorists set LaboratoristName= '" & txtName.Text & "',
+                                          LaboratoristGender = '" & cbGender.Text & "',
                                           DateofBirth = #" & txtDob.Text & "#,
+                                          DateofJoining = #" & txtjoiningdate.Text & "#,
                                           HouseNumber = '" & txtHouseNumber.Text & "',
-                                          Address = '" & txtState.Text & "',
+                                          Address = '" & cbState.Text & "',
                                           City = '" & txtCity.Text & "',
                                           State = '" & txtAddress.Text & "',
                                           Pincode = " & txtPin.Text & ", 
                                           PhoneNumber = " & txtMobile.Text & "
-                                          where ID =" & txtId.Text
+                                          where LaboratoristID =" & txtId.Text
             MsgBox("Item Updated")
             cmd = New OleDbCommand(sSql, dbcon)
             cmd.ExecuteNonQuery()
@@ -117,7 +129,7 @@ Public Class Laboratorists
         ans = MsgBox("Are you sure you want to delete ?", vbQuestion + vbYesNo, "Deletion")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "Delete from tbLaboratorists where ID =" & txtId.Text
+            sSql = "Delete from tbLaboratorists where LaboratoristID =" & txtId.Text
             MsgBox("Item Deleted")
             cmd = New OleDbCommand(sSql, dbcon)
             cmd.ExecuteNonQuery()
@@ -134,7 +146,7 @@ Public Class Laboratorists
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         Dim sSql As String
-        sSql = "Select * from tbLaboratorists where Name like '" & txtName_Search.Text & "%'"
+        sSql = "Select * from tbLaboratorists where LaboratoristName like '" & txtName_Search.Text & "%'"
         ds.Clear()
         adp = New OleDbDataAdapter(sSql, dbcon)
         adp.Fill(ds, "tbLaboratorists")
@@ -148,4 +160,6 @@ Public Class Laboratorists
         homepage.Show()
         Me.Hide()
     End Sub
+
+
 End Class
