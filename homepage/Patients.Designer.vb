@@ -33,13 +33,11 @@ Partial Class Patients
         Me.BtnUpdate = New System.Windows.Forms.Button()
         Me.BtnDelete = New System.Windows.Forms.Button()
         Me.txtHouseNumber = New System.Windows.Forms.TextBox()
-        Me.txtState = New System.Windows.Forms.TextBox()
         Me.txtDob = New System.Windows.Forms.TextBox()
         Me.txtMobile = New System.Windows.Forms.TextBox()
         Me.txtAddress = New System.Windows.Forms.TextBox()
         Me.txtPin = New System.Windows.Forms.TextBox()
         Me.txtCity = New System.Windows.Forms.TextBox()
-        Me.txtGender = New System.Windows.Forms.TextBox()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -61,6 +59,8 @@ Partial Class Patients
         Me.bt_dojoining = New System.Windows.Forms.Button()
         Me.AppointmentDatePicker = New System.Windows.Forms.DateTimePicker()
         Me.bt_dob = New System.Windows.Forms.Button()
+        Me.cbState = New System.Windows.Forms.ComboBox()
+        Me.cbGender = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -95,9 +95,9 @@ Partial Class Patients
         Me.Label14.Location = New System.Drawing.Point(63, 95)
         Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(94, 24)
+        Me.Label14.Size = New System.Drawing.Size(28, 24)
         Me.Label14.TabIndex = 59
-        Me.Label14.Text = "Patient ID"
+        Me.Label14.Text = "ID"
         '
         'DataGridView1
         '
@@ -196,15 +196,6 @@ Partial Class Patients
         Me.txtHouseNumber.Size = New System.Drawing.Size(200, 32)
         Me.txtHouseNumber.TabIndex = 56
         '
-        'txtState
-        '
-        Me.txtState.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtState.Location = New System.Drawing.Point(689, 144)
-        Me.txtState.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtState.Name = "txtState"
-        Me.txtState.Size = New System.Drawing.Size(200, 32)
-        Me.txtState.TabIndex = 55
-        '
         'txtDob
         '
         Me.txtDob.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
@@ -249,15 +240,6 @@ Partial Class Patients
         Me.txtCity.Name = "txtCity"
         Me.txtCity.Size = New System.Drawing.Size(200, 32)
         Me.txtCity.TabIndex = 50
-        '
-        'txtGender
-        '
-        Me.txtGender.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtGender.Location = New System.Drawing.Point(252, 194)
-        Me.txtGender.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtGender.Name = "txtGender"
-        Me.txtGender.Size = New System.Drawing.Size(200, 32)
-        Me.txtGender.TabIndex = 49
         '
         'txtName
         '
@@ -372,9 +354,9 @@ Partial Class Patients
         Me.Label2.Location = New System.Drawing.Point(64, 147)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(125, 24)
+        Me.Label2.Size = New System.Drawing.Size(59, 24)
         Me.Label2.TabIndex = 35
-        Me.Label2.Text = "Patient Name"
+        Me.Label2.Text = "Name"
         '
         'Label1
         '
@@ -406,9 +388,9 @@ Partial Class Patients
         Me.Label3.Location = New System.Drawing.Point(409, 590)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(173, 35)
+        Me.Label3.Size = New System.Drawing.Size(84, 35)
         Me.Label3.TabIndex = 62
-        Me.Label3.Text = "Patient Name"
+        Me.Label3.Text = "Name"
         '
         'txtRoomNo
         '
@@ -499,6 +481,28 @@ Partial Class Patients
         Me.bt_dob.Text = "D.O.B"
         Me.bt_dob.UseVisualStyleBackColor = False
         '
+        'cbState
+        '
+        Me.cbState.BackColor = System.Drawing.SystemColors.Window
+        Me.cbState.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbState.FormattingEnabled = True
+        Me.cbState.Items.AddRange(New Object() {"Andhra Pradesh", "Andaman and Nicobar Island", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli and Daman and Diu", "Delhi", "Goa", "Gujarat" & Global.Microsoft.VisualBasic.ChrW(9), "Haryana" & Global.Microsoft.VisualBasic.ChrW(9), "Himachal Pradesh" & Global.Microsoft.VisualBasic.ChrW(9), "Jammu and Kashmir ", "Jharkhand", "Karnataka", "Kerala", "Ladakh", "Lakshadweep", "Madhya Pradesh" & Global.Microsoft.VisualBasic.ChrW(9), "Maharashtra", "Manipur" & Global.Microsoft.VisualBasic.ChrW(9), "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Puducherry", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana" & Global.Microsoft.VisualBasic.ChrW(9), "Tripura", "Uttar Pradesh" & Global.Microsoft.VisualBasic.ChrW(9), "Uttarakhand" & Global.Microsoft.VisualBasic.ChrW(9), "West Bengal" & Global.Microsoft.VisualBasic.ChrW(9)})
+        Me.cbState.Location = New System.Drawing.Point(689, 144)
+        Me.cbState.Name = "cbState"
+        Me.cbState.Size = New System.Drawing.Size(200, 32)
+        Me.cbState.TabIndex = 164
+        '
+        'cbGender
+        '
+        Me.cbGender.BackColor = System.Drawing.SystemColors.Window
+        Me.cbGender.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbGender.FormattingEnabled = True
+        Me.cbGender.Items.AddRange(New Object() {"Female", "Male", "Others"})
+        Me.cbGender.Location = New System.Drawing.Point(252, 194)
+        Me.cbGender.Name = "cbGender"
+        Me.cbGender.Size = New System.Drawing.Size(200, 32)
+        Me.cbGender.TabIndex = 165
+        '
         'Patients
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -506,6 +510,8 @@ Partial Class Patients
         Me.BackgroundImage = Global.homepage.My.Resources.Resources.patient
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1366, 764)
+        Me.Controls.Add(Me.cbGender)
+        Me.Controls.Add(Me.cbState)
         Me.Controls.Add(Me.bt_dojoining)
         Me.Controls.Add(Me.AppointmentDatePicker)
         Me.Controls.Add(Me.bt_dob)
@@ -522,13 +528,11 @@ Partial Class Patients
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txtHouseNumber)
-        Me.Controls.Add(Me.txtState)
         Me.Controls.Add(Me.txtDob)
         Me.Controls.Add(Me.txtMobile)
         Me.Controls.Add(Me.txtAddress)
         Me.Controls.Add(Me.txtPin)
         Me.Controls.Add(Me.txtCity)
-        Me.Controls.Add(Me.txtGender)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
@@ -560,13 +564,11 @@ Partial Class Patients
     Friend WithEvents BtnUpdate As Button
     Friend WithEvents BtnDelete As Button
     Friend WithEvents txtHouseNumber As TextBox
-    Friend WithEvents txtState As TextBox
     Friend WithEvents txtDob As TextBox
     Friend WithEvents txtMobile As TextBox
     Friend WithEvents txtAddress As TextBox
     Friend WithEvents txtPin As TextBox
     Friend WithEvents txtCity As TextBox
-    Friend WithEvents txtGender As TextBox
     Friend WithEvents txtName As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
@@ -588,4 +590,6 @@ Partial Class Patients
     Friend WithEvents bt_dojoining As Button
     Friend WithEvents AppointmentDatePicker As DateTimePicker
     Friend WithEvents bt_dob As Button
+    Friend WithEvents cbState As ComboBox
+    Friend WithEvents cbGender As ComboBox
 End Class

@@ -35,7 +35,7 @@ Public Class Appointment
             Dim sSql As String
             sSql = "insert into tbAppointment (PatientName,PatientGender,PatientAge,DoctorName,DoctorDepartment,AppointmentTime,AppointmentDate,PatientPhoneNumber) 
                 values('" & txtName.Text & "',
-                       '" & txtGender.Text & "',
+                       '" & cbGender.Text & "',
                         " & txtAge.Text & ",
                        '" & txtDoctorName.Text & "',
                        '" & cbDepartment.Text & "',
@@ -64,7 +64,7 @@ Public Class Appointment
         Dim myrow As DataRow = t1.Rows(DataGridView1.CurrentRow.Index)
         txtId.Text = myrow("ID")
         txtName.Text = myrow("PatientName")
-        txtGender.Text = myrow("PatientGender")
+        cbGender.Text = myrow("PatientGender")
         txtAge.Text = myrow("PatientAge")
         txtMobile.Text = myrow("PatientPhoneNumber")
         txtDoctorName.Text = myrow("DoctorName")
@@ -79,7 +79,7 @@ Public Class Appointment
         If ans = vbYes Then
             Dim sSql As String
             sSql = "update tbAppointment set PatientName= '" & txtName.Text & "',
-                                          PatientGender = '" & txtGender.Text & "',
+                                          PatientGender = '" & cbGender.Text & "',
                                           PatientAge = " & txtAge.Text & ",
                                           DoctorName = '" & txtDoctorName.Text & "',
                                           DoctorDepartment = '" & cbDepartment.Text & "',
@@ -125,7 +125,7 @@ Public Class Appointment
         txtId.Text = " "
         txtName.Text = " "
         txtAge.Text = " "
-        txtGender.Text = " "
+        cbGender.Text = " "
         txtMobile.Text = " "
         txtDoctorName.Text = " "
         cbDepartment.Text = " "
@@ -150,8 +150,5 @@ Public Class Appointment
         homepage.Show()
         Me.Hide()
     End Sub
-
-
-
 
 End Class

@@ -27,7 +27,6 @@ Partial Class Appointment
         Me.txtDoctorName = New System.Windows.Forms.TextBox()
         Me.txtAge = New System.Windows.Forms.TextBox()
         Me.txtMobile = New System.Windows.Forms.TextBox()
-        Me.txtGender = New System.Windows.Forms.TextBox()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -53,18 +52,19 @@ Partial Class Appointment
         Me.AppointmentDatePicker = New System.Windows.Forms.DateTimePicker()
         Me.txtDate = New System.Windows.Forms.TextBox()
         Me.cbDepartment = New System.Windows.Forms.ComboBox()
+        Me.cbGender = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.LightGray
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(44, 611)
+        Me.DataGridView1.Location = New System.Drawing.Point(40, 636)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(828, 141)
+        Me.DataGridView1.Size = New System.Drawing.Size(1383, 141)
         Me.DataGridView1.TabIndex = 134
         '
         'txtTime
@@ -102,15 +102,6 @@ Partial Class Appointment
         Me.txtMobile.Name = "txtMobile"
         Me.txtMobile.Size = New System.Drawing.Size(200, 32)
         Me.txtMobile.TabIndex = 128
-        '
-        'txtGender
-        '
-        Me.txtGender.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtGender.Location = New System.Drawing.Point(224, 286)
-        Me.txtGender.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtGender.Name = "txtGender"
-        Me.txtGender.Size = New System.Drawing.Size(200, 32)
-        Me.txtGender.TabIndex = 126
         '
         'txtName
         '
@@ -221,9 +212,9 @@ Partial Class Appointment
         Me.Label2.Location = New System.Drawing.Point(36, 192)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(125, 24)
+        Me.Label2.Size = New System.Drawing.Size(59, 24)
         Me.Label2.TabIndex = 117
-        Me.Label2.Text = "Patient Name"
+        Me.Label2.Text = "Name"
         '
         'Label1
         '
@@ -334,9 +325,9 @@ Partial Class Appointment
         Me.Label14.Location = New System.Drawing.Point(37, 139)
         Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(94, 24)
+        Me.Label14.Size = New System.Drawing.Size(28, 24)
         Me.Label14.TabIndex = 140
-        Me.Label14.Text = "Patient ID"
+        Me.Label14.Text = "ID"
         '
         'txtName_Search
         '
@@ -356,9 +347,9 @@ Partial Class Appointment
         Me.Label3.Location = New System.Drawing.Point(185, 555)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(125, 24)
+        Me.Label3.Size = New System.Drawing.Size(59, 24)
         Me.Label3.TabIndex = 143
-        Me.Label3.Text = "Patient Name"
+        Me.Label3.Text = "Name"
         '
         'btnSearch
         '
@@ -414,11 +405,25 @@ Partial Class Appointment
         Me.cbDepartment.Size = New System.Drawing.Size(233, 32)
         Me.cbDepartment.TabIndex = 150
         '
+        'cbGender
+        '
+        Me.cbGender.BackColor = System.Drawing.SystemColors.Window
+        Me.cbGender.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbGender.FormattingEnabled = True
+        Me.cbGender.Items.AddRange(New Object() {"Female", "Male", "Others"})
+        Me.cbGender.Location = New System.Drawing.Point(225, 294)
+        Me.cbGender.Name = "cbGender"
+        Me.cbGender.Size = New System.Drawing.Size(200, 32)
+        Me.cbGender.TabIndex = 157
+        '
         'Appointment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1380, 790)
+        Me.BackgroundImage = Global.homepage.My.Resources.Resources.Appointment
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(1518, 790)
+        Me.Controls.Add(Me.cbGender)
         Me.Controls.Add(Me.cbDepartment)
         Me.Controls.Add(Me.txtDate)
         Me.Controls.Add(Me.AppointmentDatePicker)
@@ -434,7 +439,6 @@ Partial Class Appointment
         Me.Controls.Add(Me.txtDoctorName)
         Me.Controls.Add(Me.txtAge)
         Me.Controls.Add(Me.txtMobile)
-        Me.Controls.Add(Me.txtGender)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label10)
@@ -459,7 +463,6 @@ Partial Class Appointment
     Friend WithEvents txtDoctorName As TextBox
     Friend WithEvents txtAge As TextBox
     Friend WithEvents txtMobile As TextBox
-    Friend WithEvents txtGender As TextBox
     Friend WithEvents txtName As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label10 As Label
@@ -485,4 +488,5 @@ Partial Class Appointment
     Friend WithEvents AppointmentDatePicker As DateTimePicker
     Friend WithEvents txtDate As TextBox
     Friend WithEvents cbDepartment As ComboBox
+    Friend WithEvents cbGender As ComboBox
 End Class

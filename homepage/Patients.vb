@@ -27,12 +27,13 @@ Public Class Patients
         txtId.Text = " "
         txtName.Text = " "
         txtDob.Text = " "
-        txtGender.Text = " "
+        txtRoomNo.Text = " "
+        cbGender.Text = " "
         txtMobile.Text = " "
         txtAddress.Text = " "
         txtCity.Text = " "
         txtPin.Text = " "
-        txtState.Text = " "
+        cbState.Text = " "
         txtHouseNumber.Text = " "
     End Sub
 
@@ -41,14 +42,14 @@ Public Class Patients
         ans = MsgBox("Do you want to Insert ?", vbQuestion + vbYesNo, "Insertion")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "insert into tbPatients (Name,RoomNo,Date,Gender,DateofBirth,HouseNumber,State,City,Address,Pincode,PhoneNumber) 
+            sSql = "insert into tbPatients (PatientName,RoomNo,AdmitDate,PatientGender,DateofBirth,HouseNumber,State,City,Address,Pincode,PhoneNumber) 
                 values('" & txtName.Text & "',
                         " & txtRoomNo.Text & ",
                        #" & txtDate.Text & "#,
-                       '" & txtGender.Text & "',
+                       '" & cbGender.Text & "',
                         #" & txtDob.Text & "#,
                        '" & txtHouseNumber.Text & "',
-                       '" & txtState.Text & "',
+                       '" & cbState.Text & "',
                        '" & txtCity.Text & "',
                        '" & txtAddress.Text & "',
                         " & txtPin.Text & ", 
@@ -74,13 +75,13 @@ Public Class Patients
         If DataGridView1.CurrentRow.Index >= t1.Rows.Count Then Exit Sub
         Dim myrow As DataRow = t1.Rows(DataGridView1.CurrentRow.Index)
         txtId.Text = myrow("ID")
-        txtName.Text = myrow("Name")
+        txtName.Text = myrow("PatientName")
         txtRoomNo.Text = myrow("RoomNo")
-        txtDate.Text = myrow("Date")
-        txtGender.Text = myrow("Gender")
+        txtDate.Text = myrow("AdmitDate")
+        cbGender.Text = myrow("PatientGender")
         txtDob.Text = myrow("DateofBirth")
         txtHouseNumber.Text = myrow("HouseNumber")
-        txtState.Text = myrow("State")
+        cbState.Text = myrow("State")
         txtCity.Text = myrow("City")
         txtAddress.Text = myrow("Address")
         txtPin.Text = myrow("Pincode")
@@ -92,13 +93,13 @@ Public Class Patients
         ans = MsgBox("Are you sure you want to Update ?", vbQuestion + vbYesNo, "Updation")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "update tbPatients set Name= '" & txtName.Text & "',
+            sSql = "update tbPatients set PatientName= '" & txtName.Text & "',
                                           RoomNo = " & txtRoomNo.Text & ",
-                                          Date = #" & txtDate.Text & "#,
-                                          Gender = '" & txtGender.Text & "',
+                                          AdmitDate = #" & txtDate.Text & "#,
+                                          PatientGender = '" & cbGender.Text & "',
                                           DateofBirth = #" & txtDob.Text & "#,
                                           HouseNumber = '" & txtHouseNumber.Text & "',
-                                          Address = '" & txtState.Text & "',
+                                          Address = '" & cbState.Text & "',
                                           City = '" & txtCity.Text & "',
                                           State = '" & txtAddress.Text & "',
                                           Pincode = " & txtPin.Text & ", 
@@ -154,5 +155,13 @@ Public Class Patients
 
         homepage.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub bt_dob_Click(sender As Object, e As EventArgs) Handles bt_dob.Click
+        txtDob.Text = Format(AppointmentDatePicker.Value, "dd-MM-yyyy")
+    End Sub
+
+    Private Sub bt_dojoining_Click(sender As Object, e As EventArgs) Handles bt_dojoining.Click
+        txtDate.Text = Format(AppointmentDatePicker.Value, "dd-MM-yyyy")
     End Sub
 End Class

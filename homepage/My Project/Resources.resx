@@ -139,6 +139,9 @@
   <data name="vb.net (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vb.net (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="homepagelogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\homepagelogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pharmacy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pharmacy.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,7 +163,7 @@
   <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="homepagelogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\homepagelogo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Appointment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Appointment.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -98,12 +98,12 @@ Partial Class Laboratorists
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(322, 603)
+        Me.Label3.Location = New System.Drawing.Point(461, 608)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(249, 37)
+        Me.Label3.Size = New System.Drawing.Size(91, 37)
         Me.Label3.TabIndex = 140
-        Me.Label3.Text = "Laboratorist Name"
+        Me.Label3.Text = "Name"
         '
         'btnSearch
         '
@@ -135,9 +135,9 @@ Partial Class Laboratorists
         Me.Label1.Location = New System.Drawing.Point(34, 116)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(143, 24)
+        Me.Label1.Size = New System.Drawing.Size(28, 24)
         Me.Label1.TabIndex = 137
-        Me.Label1.Text = "Laboratorists ID"
+        Me.Label1.Text = "ID"
         '
         'DataGridView1
         '
@@ -310,7 +310,7 @@ Partial Class Laboratorists
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(37, 274)
+        Me.Label9.Location = New System.Drawing.Point(37, 269)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(69, 24)
@@ -373,9 +373,9 @@ Partial Class Laboratorists
         Me.Label2.Location = New System.Drawing.Point(34, 167)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(174, 24)
+        Me.Label2.Size = New System.Drawing.Size(59, 24)
         Me.Label2.TabIndex = 119
-        Me.Label2.Text = "Laboratorists Name"
+        Me.Label2.Text = "Name"
         '
         'Label11
         '

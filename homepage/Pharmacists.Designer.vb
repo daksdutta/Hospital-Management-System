@@ -35,12 +35,10 @@ Partial Class Pharmacists
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.txtPin = New System.Windows.Forms.TextBox()
-        Me.txtState = New System.Windows.Forms.TextBox()
         Me.txtAddress = New System.Windows.Forms.TextBox()
         Me.txtDob = New System.Windows.Forms.TextBox()
         Me.txtMobile = New System.Windows.Forms.TextBox()
         Me.txtCity = New System.Windows.Forms.TextBox()
-        Me.txtGender = New System.Windows.Forms.TextBox()
         Me.txtName = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -53,6 +51,13 @@ Partial Class Pharmacists
         Me.txtHouseNumber = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtjoiningdate = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.bt_dojoining = New System.Windows.Forms.Button()
+        Me.AppointmentDatePicker = New System.Windows.Forms.DateTimePicker()
+        Me.bt_dob = New System.Windows.Forms.Button()
+        Me.cbGender = New System.Windows.Forms.ComboBox()
+        Me.cbState = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -60,7 +65,7 @@ Partial Class Pharmacists
         'txtName_Search
         '
         Me.txtName_Search.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtName_Search.Location = New System.Drawing.Point(573, 499)
+        Me.txtName_Search.Location = New System.Drawing.Point(651, 600)
         Me.txtName_Search.Margin = New System.Windows.Forms.Padding(4)
         Me.txtName_Search.Name = "txtName_Search"
         Me.txtName_Search.Size = New System.Drawing.Size(200, 32)
@@ -70,19 +75,21 @@ Partial Class Pharmacists
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(371, 507)
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(524, 597)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(157, 24)
+        Me.Label3.Size = New System.Drawing.Size(84, 35)
         Me.Label3.TabIndex = 114
-        Me.Label3.Text = "Pharmacist Name"
+        Me.Label3.Text = "Name"
         '
         'btnSearch
         '
         Me.btnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(188, Byte), Integer))
         Me.btnSearch.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.Location = New System.Drawing.Point(789, 494)
+        Me.btnSearch.ForeColor = System.Drawing.Color.White
+        Me.btnSearch.Location = New System.Drawing.Point(868, 597)
         Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(117, 37)
@@ -93,7 +100,7 @@ Partial Class Pharmacists
         'txtId
         '
         Me.txtId.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtId.Location = New System.Drawing.Point(249, 94)
+        Me.txtId.Location = New System.Drawing.Point(254, 86)
         Me.txtId.Margin = New System.Windows.Forms.Padding(4)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(200, 32)
@@ -104,21 +111,21 @@ Partial Class Pharmacists
         Me.Label14.AutoSize = True
         Me.Label14.BackColor = System.Drawing.Color.Transparent
         Me.Label14.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(61, 102)
+        Me.Label14.Location = New System.Drawing.Point(66, 94)
         Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(134, 24)
+        Me.Label14.Size = New System.Drawing.Size(28, 24)
         Me.Label14.TabIndex = 111
-        Me.Label14.Text = "Pharmacists ID"
+        Me.Label14.Text = "ID"
         '
         'DataGridView1
         '
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(82, 626)
+        Me.DataGridView1.Location = New System.Drawing.Point(23, 649)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1298, 123)
+        Me.DataGridView1.Size = New System.Drawing.Size(1419, 109)
         Me.DataGridView1.TabIndex = 110
         '
         'Panel1
@@ -128,7 +135,7 @@ Partial Class Pharmacists
         Me.Panel1.Controls.Add(Me.btnExit)
         Me.Panel1.Controls.Add(Me.btnUpdate)
         Me.Panel1.Controls.Add(Me.btnDelete)
-        Me.Panel1.Location = New System.Drawing.Point(65, 404)
+        Me.Panel1.Location = New System.Drawing.Point(70, 466)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(796, 69)
@@ -138,6 +145,7 @@ Partial Class Pharmacists
         '
         Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(188, Byte), Integer))
         Me.btnClear.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.White
         Me.btnClear.Location = New System.Drawing.Point(483, 12)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClear.Name = "btnClear"
@@ -150,6 +158,7 @@ Partial Class Pharmacists
         '
         Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(188, Byte), Integer))
         Me.btnAdd.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.Color.White
         Me.btnAdd.Location = New System.Drawing.Point(33, 12)
         Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAdd.Name = "btnAdd"
@@ -162,6 +171,7 @@ Partial Class Pharmacists
         '
         Me.btnExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(188, Byte), Integer))
         Me.btnExit.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExit.ForeColor = System.Drawing.Color.White
         Me.btnExit.Location = New System.Drawing.Point(628, 12)
         Me.btnExit.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExit.Name = "btnExit"
@@ -174,6 +184,7 @@ Partial Class Pharmacists
         '
         Me.btnUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(188, Byte), Integer))
         Me.btnUpdate.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.ForeColor = System.Drawing.Color.White
         Me.btnUpdate.Location = New System.Drawing.Point(184, 12)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
         Me.btnUpdate.Name = "btnUpdate"
@@ -186,6 +197,7 @@ Partial Class Pharmacists
         '
         Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(188, Byte), Integer))
         Me.btnDelete.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
         Me.btnDelete.Location = New System.Drawing.Point(328, 12)
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDelete.Name = "btnDelete"
@@ -197,25 +209,16 @@ Partial Class Pharmacists
         'txtPin
         '
         Me.txtPin.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtPin.Location = New System.Drawing.Point(673, 283)
+        Me.txtPin.Location = New System.Drawing.Point(669, 315)
         Me.txtPin.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPin.Name = "txtPin"
         Me.txtPin.Size = New System.Drawing.Size(200, 32)
         Me.txtPin.TabIndex = 108
         '
-        'txtState
-        '
-        Me.txtState.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtState.Location = New System.Drawing.Point(673, 234)
-        Me.txtState.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtState.Name = "txtState"
-        Me.txtState.Size = New System.Drawing.Size(200, 32)
-        Me.txtState.TabIndex = 107
-        '
         'txtAddress
         '
         Me.txtAddress.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtAddress.Location = New System.Drawing.Point(673, 139)
+        Me.txtAddress.Location = New System.Drawing.Point(669, 171)
         Me.txtAddress.Margin = New System.Windows.Forms.Padding(4)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(200, 32)
@@ -224,7 +227,7 @@ Partial Class Pharmacists
         'txtDob
         '
         Me.txtDob.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtDob.Location = New System.Drawing.Point(249, 186)
+        Me.txtDob.Location = New System.Drawing.Point(254, 264)
         Me.txtDob.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDob.Name = "txtDob"
         Me.txtDob.Size = New System.Drawing.Size(200, 32)
@@ -233,7 +236,7 @@ Partial Class Pharmacists
         'txtMobile
         '
         Me.txtMobile.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtMobile.Location = New System.Drawing.Point(249, 283)
+        Me.txtMobile.Location = New System.Drawing.Point(254, 215)
         Me.txtMobile.Margin = New System.Windows.Forms.Padding(4)
         Me.txtMobile.Name = "txtMobile"
         Me.txtMobile.Size = New System.Drawing.Size(200, 32)
@@ -242,25 +245,16 @@ Partial Class Pharmacists
         'txtCity
         '
         Me.txtCity.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtCity.Location = New System.Drawing.Point(673, 188)
+        Me.txtCity.Location = New System.Drawing.Point(669, 220)
         Me.txtCity.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCity.Name = "txtCity"
         Me.txtCity.Size = New System.Drawing.Size(200, 32)
         Me.txtCity.TabIndex = 102
         '
-        'txtGender
-        '
-        Me.txtGender.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtGender.Location = New System.Drawing.Point(249, 234)
-        Me.txtGender.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtGender.Name = "txtGender"
-        Me.txtGender.Size = New System.Drawing.Size(200, 32)
-        Me.txtGender.TabIndex = 101
-        '
         'txtName
         '
         Me.txtName.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtName.Location = New System.Drawing.Point(249, 139)
+        Me.txtName.Location = New System.Drawing.Point(254, 126)
         Me.txtName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(200, 32)
@@ -271,7 +265,7 @@ Partial Class Pharmacists
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(504, 242)
+        Me.Label12.Location = New System.Drawing.Point(500, 274)
         Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(53, 24)
@@ -283,7 +277,7 @@ Partial Class Pharmacists
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(61, 194)
+        Me.Label10.Location = New System.Drawing.Point(66, 272)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(118, 24)
@@ -295,7 +289,7 @@ Partial Class Pharmacists
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(64, 286)
+        Me.Label9.Location = New System.Drawing.Point(66, 218)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(69, 24)
@@ -307,7 +301,7 @@ Partial Class Pharmacists
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(61, 242)
+        Me.Label8.Location = New System.Drawing.Point(66, 174)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(72, 24)
@@ -319,7 +313,7 @@ Partial Class Pharmacists
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(504, 291)
+        Me.Label7.Location = New System.Drawing.Point(500, 323)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(77, 24)
@@ -331,7 +325,7 @@ Partial Class Pharmacists
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(504, 196)
+        Me.Label6.Location = New System.Drawing.Point(500, 228)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(42, 24)
@@ -343,7 +337,7 @@ Partial Class Pharmacists
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(504, 147)
+        Me.Label5.Location = New System.Drawing.Point(500, 179)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(82, 24)
@@ -355,17 +349,17 @@ Partial Class Pharmacists
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(61, 147)
+        Me.Label2.Location = New System.Drawing.Point(66, 134)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(157, 24)
+        Me.Label2.Size = New System.Drawing.Size(59, 24)
         Me.Label2.TabIndex = 91
-        Me.Label2.Text = "Pharmacist Name"
+        Me.Label2.Text = "Name"
         '
         'txtHouseNumber
         '
         Me.txtHouseNumber.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtHouseNumber.Location = New System.Drawing.Point(673, 94)
+        Me.txtHouseNumber.Location = New System.Drawing.Point(669, 126)
         Me.txtHouseNumber.Margin = New System.Windows.Forms.Padding(4)
         Me.txtHouseNumber.Name = "txtHouseNumber"
         Me.txtHouseNumber.Size = New System.Drawing.Size(200, 32)
@@ -376,7 +370,7 @@ Partial Class Pharmacists
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(505, 102)
+        Me.Label13.Location = New System.Drawing.Point(501, 134)
         Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(136, 24)
@@ -396,13 +390,97 @@ Partial Class Pharmacists
         Me.Label15.TabIndex = 147
         Me.Label15.Text = "PHARMACISTS  DETAILS"
         '
+        'txtjoiningdate
+        '
+        Me.txtjoiningdate.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.txtjoiningdate.Location = New System.Drawing.Point(254, 316)
+        Me.txtjoiningdate.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtjoiningdate.Name = "txtjoiningdate"
+        Me.txtjoiningdate.Size = New System.Drawing.Size(200, 32)
+        Me.txtjoiningdate.TabIndex = 149
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(66, 324)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(136, 24)
+        Me.Label1.TabIndex = 148
+        Me.Label1.Text = "Date of Joining"
+        '
+        'bt_dojoining
+        '
+        Me.bt_dojoining.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(188, Byte), Integer))
+        Me.bt_dojoining.Font = New System.Drawing.Font("Calibri", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_dojoining.ForeColor = System.Drawing.Color.White
+        Me.bt_dojoining.Location = New System.Drawing.Point(361, 401)
+        Me.bt_dojoining.Margin = New System.Windows.Forms.Padding(4)
+        Me.bt_dojoining.Name = "bt_dojoining"
+        Me.bt_dojoining.Size = New System.Drawing.Size(93, 31)
+        Me.bt_dojoining.TabIndex = 163
+        Me.bt_dojoining.Text = "D.O.J"
+        Me.bt_dojoining.UseVisualStyleBackColor = False
+        '
+        'AppointmentDatePicker
+        '
+        Me.AppointmentDatePicker.Font = New System.Drawing.Font("Calibri", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AppointmentDatePicker.Location = New System.Drawing.Point(254, 366)
+        Me.AppointmentDatePicker.Name = "AppointmentDatePicker"
+        Me.AppointmentDatePicker.Size = New System.Drawing.Size(200, 28)
+        Me.AppointmentDatePicker.TabIndex = 162
+        '
+        'bt_dob
+        '
+        Me.bt_dob.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(188, Byte), Integer))
+        Me.bt_dob.Font = New System.Drawing.Font("Calibri", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_dob.ForeColor = System.Drawing.Color.White
+        Me.bt_dob.Location = New System.Drawing.Point(254, 401)
+        Me.bt_dob.Margin = New System.Windows.Forms.Padding(4)
+        Me.bt_dob.Name = "bt_dob"
+        Me.bt_dob.Size = New System.Drawing.Size(90, 31)
+        Me.bt_dob.TabIndex = 161
+        Me.bt_dob.Text = "D.O.B"
+        Me.bt_dob.UseVisualStyleBackColor = False
+        '
+        'cbGender
+        '
+        Me.cbGender.BackColor = System.Drawing.SystemColors.Window
+        Me.cbGender.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbGender.FormattingEnabled = True
+        Me.cbGender.Items.AddRange(New Object() {"Female", "Male", "Others"})
+        Me.cbGender.Location = New System.Drawing.Point(254, 174)
+        Me.cbGender.Name = "cbGender"
+        Me.cbGender.Size = New System.Drawing.Size(200, 32)
+        Me.cbGender.TabIndex = 164
+        '
+        'cbState
+        '
+        Me.cbState.BackColor = System.Drawing.SystemColors.Window
+        Me.cbState.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbState.FormattingEnabled = True
+        Me.cbState.Items.AddRange(New Object() {"Andhra Pradesh", "Andaman and Nicobar Island", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh", "Chhattisgarh", "Dadra and Nagar Haveli and Daman and Diu", "Delhi", "Goa", "Gujarat" & Global.Microsoft.VisualBasic.ChrW(9), "Haryana" & Global.Microsoft.VisualBasic.ChrW(9), "Himachal Pradesh" & Global.Microsoft.VisualBasic.ChrW(9), "Jammu and Kashmir ", "Jharkhand", "Karnataka", "Kerala", "Ladakh", "Lakshadweep", "Madhya Pradesh" & Global.Microsoft.VisualBasic.ChrW(9), "Maharashtra", "Manipur" & Global.Microsoft.VisualBasic.ChrW(9), "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Puducherry", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana" & Global.Microsoft.VisualBasic.ChrW(9), "Tripura", "Uttar Pradesh" & Global.Microsoft.VisualBasic.ChrW(9), "Uttarakhand" & Global.Microsoft.VisualBasic.ChrW(9), "West Bengal" & Global.Microsoft.VisualBasic.ChrW(9)})
+        Me.cbState.Location = New System.Drawing.Point(669, 272)
+        Me.cbState.Name = "cbState"
+        Me.cbState.Size = New System.Drawing.Size(200, 32)
+        Me.cbState.TabIndex = 165
+        '
         'Pharmacists
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.homepage.My.Resources.Resources.pharmacy
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1430, 762)
+        Me.ClientSize = New System.Drawing.Size(1474, 771)
+        Me.Controls.Add(Me.cbState)
+        Me.Controls.Add(Me.cbGender)
+        Me.Controls.Add(Me.bt_dojoining)
+        Me.Controls.Add(Me.AppointmentDatePicker)
+        Me.Controls.Add(Me.bt_dob)
+        Me.Controls.Add(Me.txtjoiningdate)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtHouseNumber)
         Me.Controls.Add(Me.Label13)
@@ -414,12 +492,10 @@ Partial Class Pharmacists
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txtPin)
-        Me.Controls.Add(Me.txtState)
         Me.Controls.Add(Me.txtAddress)
         Me.Controls.Add(Me.txtDob)
         Me.Controls.Add(Me.txtMobile)
         Me.Controls.Add(Me.txtCity)
-        Me.Controls.Add(Me.txtGender)
         Me.Controls.Add(Me.txtName)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label10)
@@ -451,12 +527,10 @@ Partial Class Pharmacists
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents txtPin As TextBox
-    Friend WithEvents txtState As TextBox
     Friend WithEvents txtAddress As TextBox
     Friend WithEvents txtDob As TextBox
     Friend WithEvents txtMobile As TextBox
     Friend WithEvents txtCity As TextBox
-    Friend WithEvents txtGender As TextBox
     Friend WithEvents txtName As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label10 As Label
@@ -469,4 +543,11 @@ Partial Class Pharmacists
     Friend WithEvents txtHouseNumber As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents Label15 As Label
+    Friend WithEvents txtjoiningdate As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents bt_dojoining As Button
+    Friend WithEvents AppointmentDatePicker As DateTimePicker
+    Friend WithEvents bt_dob As Button
+    Friend WithEvents cbGender As ComboBox
+    Friend WithEvents cbState As ComboBox
 End Class

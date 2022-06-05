@@ -255,5 +255,8 @@
   <ItemGroup>
     <None Include="Resources\homepagelogo.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Appointment.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

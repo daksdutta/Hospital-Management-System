@@ -81,7 +81,7 @@ Public Class Laboratorists
         If t1.Rows.Count = 0 Then Exit Sub
         If DataGridView1.CurrentRow.Index >= t1.Rows.Count Then Exit Sub
         Dim myrow As DataRow = t1.Rows(DataGridView1.CurrentRow.Index)
-        txtId.Text = myrow("LaboratoristID")
+        txtId.Text = myrow("ID")
         txtName.Text = myrow("LaboratoristName")
         cbGender.Text = myrow("LaboratoristGender")
         txtDob.Text = myrow("DateofBirth")
@@ -109,7 +109,7 @@ Public Class Laboratorists
                                           State = '" & txtAddress.Text & "',
                                           Pincode = " & txtPin.Text & ", 
                                           PhoneNumber = " & txtMobile.Text & "
-                                          where LaboratoristID =" & txtId.Text
+                                          where ID =" & txtId.Text
             MsgBox("Item Updated")
             cmd = New OleDbCommand(sSql, dbcon)
             cmd.ExecuteNonQuery()
@@ -129,7 +129,7 @@ Public Class Laboratorists
         ans = MsgBox("Are you sure you want to delete ?", vbQuestion + vbYesNo, "Deletion")
         If ans = vbYes Then
             Dim sSql As String
-            sSql = "Delete from tbLaboratorists where LaboratoristID =" & txtId.Text
+            sSql = "Delete from tbLaboratorists where ID =" & txtId.Text
             MsgBox("Item Deleted")
             cmd = New OleDbCommand(sSql, dbcon)
             cmd.ExecuteNonQuery()

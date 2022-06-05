@@ -56,10 +56,10 @@ Partial Class homepage
         Me.Btn_Emergency.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(133, Byte), Integer), CType(CType(133, Byte), Integer))
         Me.Btn_Emergency.Font = New System.Drawing.Font("Segoe UI", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Btn_Emergency.ForeColor = System.Drawing.Color.White
-        Me.Btn_Emergency.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.Btn_Emergency.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Btn_Emergency.Location = New System.Drawing.Point(1007, 46)
         Me.Btn_Emergency.Name = "Btn_Emergency"
-        Me.Btn_Emergency.Size = New System.Drawing.Size(155, 38)
+        Me.Btn_Emergency.Size = New System.Drawing.Size(182, 38)
         Me.Btn_Emergency.TabIndex = 7
         Me.Btn_Emergency.Text = "Emergency Patients"
         Me.Btn_Emergency.UseVisualStyleBackColor = False

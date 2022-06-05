@@ -9,7 +9,7 @@ Public Class ChangePassword
 
     Private Sub btn_changepassword_Click(sender As Object, e As EventArgs) Handles btn_changepassword.Click
         'dbcon = New OleDbConnection
-        dbcon.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Hospital-Management-System\hospital.mdb"
+        dbcon.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=F:\Hospital-Management-System\hospital.mdb"
         dbcon.Open()
 
         Dim sql1 As String
@@ -18,14 +18,11 @@ Public Class ChangePassword
         ElseIf (txtnewpassword.Text <> txtconfirmpassword.Text) Then
             MessageBox.Show("New password and Confirm Password didn't match")
         Else
-            sql1 = "update tbLogin set Password='" & txtnewpassword.Text & "' where Name='" & txtUsername.Text & "'"
-
-
-            'MessageBox.Show(sql1)
+            sql1 = "update tbLogin set Password='" & txtnewpassword.Text & "' where Username='" & txtUsername.Text & "'"
+            MessageBox.Show(sql1)
             cmd = New OleDbCommand(sql1, dbcon)
             cmd.ExecuteNonQuery()
-
-            MessageBox.Show("record update")
+            MessageBox.Show("Record update")
         End If
     End Sub
 

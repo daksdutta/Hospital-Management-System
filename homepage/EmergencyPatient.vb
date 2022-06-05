@@ -85,7 +85,7 @@ Public Class EmergencyPatient
                                           EmergencyDate = #" & txtDate.Text & "#,
                                           EmergencyTime = #" & txtTime.Text & "#,  
                                           PatientGender = '" & cbGender.Text & "',
-                                          CaseType = '" & txtCaseType.Text & "',
+                                          CaseType = '" & txtCaseType.Text & "'
                                           where PatientID =" & txtId.Text
             MsgBox("Item Updated")
             cmd = New OleDbCommand(sSql, dbcon)
@@ -134,8 +134,7 @@ Public Class EmergencyPatient
     End Sub
 
     Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
-        Login.Show()
-        Me.Hide()
+        Me.Close()
     End Sub
 
 

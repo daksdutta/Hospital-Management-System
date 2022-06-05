@@ -272,9 +272,9 @@ Partial Class EmergencyPatient
         Me.Label2.Location = New System.Drawing.Point(107, 262)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(125, 24)
+        Me.Label2.Size = New System.Drawing.Size(59, 24)
         Me.Label2.TabIndex = 69
-        Me.Label2.Text = "Patient Name"
+        Me.Label2.Text = "Name"
         '
         'Label1
         '
@@ -294,7 +294,7 @@ Partial Class EmergencyPatient
         Me.Label15.BackColor = System.Drawing.Color.Transparent
         Me.Label15.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(188, Byte), Integer))
-        Me.Label15.Location = New System.Drawing.Point(68, 59)
+        Me.Label15.Location = New System.Drawing.Point(84, 44)
         Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(617, 54)
